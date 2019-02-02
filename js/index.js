@@ -1,9 +1,13 @@
-//if user is signed in, sign out the user.
-var user = firebase.auth().currentUser;
-if (user != null) {
-  console.log('signing out: ' + user.uid);
-  firebase.auth().signOut();
-}
+
+  //listens for user authentication status.
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    window.location.href = "./categories.html";
+    //loopForUserAgendas(currentUserRef);
+  } else {
+    console.log('user not logged in');
+  }
+});
 
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
@@ -30,7 +34,7 @@ var uiConfig = {
       //delay the page redirection for 2 seconds so that new user's
       //data can be written into the database.
       setTimeout(function() {
-        window.location.href='profile.html';
+        window.location.href='categories.html';
       }, 2000);
       console.log('user exists, skipped over if statement');
     }, uiShown: function() {

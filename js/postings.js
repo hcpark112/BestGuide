@@ -13,18 +13,23 @@ var postingsRef = firebase.database().ref('postings');
 var count = 0;
 var row = 0;
 
-postingsRef.child("AF").once("value", function(snapshot) {
+var url = document.location.href;
+var category = url.split('#')[1];
+
+postingsRef.child(category).once("value", function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
+    let arr = [];
+    childSnapshot.forEach(function(snap) {
+      arr.push(snap.val());
+    });
+    
     // console.log(count++);
     if(count == 4){
       row++;
       count = 0;
     }
     else{
-      let arr = [];
-      childSnapshot.forEach(function(snap) {
-        arr.push(snap.val());
-      });
+
       console.log(arr[1] + " " + arr[2]);
       let card = $("<div class='card ml-1 mb-2' style='width: 18rem;'></div>");
       let cardBody = $("<div class='card-body'></div>");
