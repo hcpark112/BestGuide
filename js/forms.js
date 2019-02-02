@@ -25,3 +25,17 @@ $('select[name="select_dept"]').on('change',function(){
              break;
    }
 });
+console.log(firebase)
+// Get a reference to the database service
+var database = firebase.database();
+
+var submit = $('#postButton');
+
+submit.on('click', function(){
+  console.log($('#inputFName').val());
+  firebase.database().ref('postings/').set({
+    first_name: $('#inputFName').val(),
+    last_name: $('#inputLName').val(),
+    department: $('#AF').val()
+  });
+})
