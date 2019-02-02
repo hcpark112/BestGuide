@@ -7,6 +7,7 @@
     padding-top: 3%;
   }
   #postButton {margin-left: 15px;}
+  .skill {display: none;}
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -20,7 +21,9 @@
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { ... }
+@media (min-width: 992px) {
+  #inputPhone {margin-left: 3%;}
+}
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { ... }
