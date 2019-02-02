@@ -1,9 +1,13 @@
-//if user is signed in, sign out the user.
-var user = firebase.auth().currentUser;
-if (user != null) {
-  console.log('signing out: ' + user.uid);
-  firebase.auth().signOut();
-}
+
+  //listens for user authentication status.
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    window.location.href = "./categories.html";
+    //loopForUserAgendas(currentUserRef);
+  } else {
+    console.log('user not logged in');
+  }
+});
 
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());

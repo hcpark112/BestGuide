@@ -54,15 +54,15 @@
       <hr class="my-4">
       <div class="card-group">
         <div class="card" style="width: 18rem;">
-          <a href="postings.html" class="custom-card" id="AF">
+          <a id="AF" class="custom-card" id="AF">
             <div class="card-body">
               <img class="card-img-top" src="./img/cate_finance.png" alt="Card image cap">
               <h5 class="card-title">Accounting/Finance</h5>
             </div>
           </a>
         </div>
-        <div class="card" style="width: 18rem;">
-          <a href="postings.html" class="custom-card">
+        <div id="GS" class="card" style="width: 18rem;">
+          <a class="custom-card">
             <div class="card-body">
               <img class="card-img-top" src="./img/cate_techsupp.png" alt="Card image cap">
               <h5 class="card-title">Geek Squad</h5>
@@ -70,7 +70,7 @@
           </a>
         </div>
         <div class="card" style="width: 18rem;">
-          <a href="postings.html" class="custom-card">
+          <a id="M" class="custom-card">
             <div class="card-body">
               <img class="card-img-top" src="./img/cate_marketing.png" alt="Card image cap">
               <h5 class="card-title">Marketing</h5>
@@ -84,13 +84,17 @@
       <p class="lead">placeholder</p>
     </footer> -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-functions.js"></script>
+    <script src="./js/firebase_setup.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="js/categories.js"></script>
   </body>
 </html>
