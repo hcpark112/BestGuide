@@ -1,0 +1,13 @@
+body {
+  margin: 0 auto !important;
+  background-color: #f8f9fa !important;
+  padding-bottom: 45px;
+}
+footer {
+  background-color: rgb(225, 225, 225);
+  text-align: center;
+  font-size: 1.25em;
+  height: 40px;
+  line-height: 40px;
+  color: black;
+}
