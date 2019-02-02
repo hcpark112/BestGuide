@@ -25,17 +25,56 @@ $('select[name="select_dept"]').on('change',function(){
              break;
    }
 });
-console.log(firebase)
+
+
+
 // Get a reference to the database service
 var database = firebase.database();
 
 var submit = $('#postButton');
 
+// var dept = $('select[name="select_dept"]').val();
+
 submit.on('click', function(){
-  console.log($('#inputFName').val());
-  firebase.database().ref('postings/').set({
-    first_name: $('#inputFName').val(),
-    last_name: $('#inputLName').val(),
-    department: $('#AF').val()
-  });
+  var dept = $('#inputDept :selected').text();
+  console.log(dept+"  test");
+
+   switch (dept) {
+     case 'Accounting/Finance':
+      firebase.database().ref('postings/AF').push({
+      FName: $('#inputFName').val(),
+      Lname: $('#inputLName').val(),
+      Email: $('#inputEmail').val(),
+      Phone: $('#inputPhone').val(),
+      Skill: $('#AF :selected').text()
+    });
+       break;
+     case 'Geek Squad':
+     console.log(dept+"test");
+
+     firebase.database().ref('postings/GS').push({
+     FName: $('#inputFName').val(),
+     Lname: $('#inputLName').val(),
+     Email: $('#inputEmail').val(),
+     Phone: $('#inputPhone').val(),
+     Skill: $('#GS :selected').text()
+   });
+      break;
+     case 'Marketing':
+     firebase.database().ref('postings/M').push({
+     FName: $('#inputFName').val(),
+     Lname: $('#inputLName').val(),
+     Email: $('#inputEmail').val(),
+     Phone: $('#inputPhone').val(),
+     Skill: $('#marketing :selected').text()
+   });
+     break;
+     default:
+     console.log('error');
+
+   }
+
+
+
+
 })
