@@ -13,7 +13,10 @@ var postingsRef = firebase.database().ref('postings');
 var count = 0;
 var row = 0;
 
-postingsRef.child("AF").once("value", function(snapshot) {
+var url = document.location.href;
+var category = url.split('#')[1];
+
+postingsRef.child(category).once("value", function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
     let arr = [];
     childSnapshot.forEach(function(snap) {

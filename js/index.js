@@ -34,7 +34,7 @@ var uiConfig = {
       //delay the page redirection for 2 seconds so that new user's
       //data can be written into the database.
       setTimeout(function() {
-        window.location.href='profile.html';
+        window.location.href='categories.html';
       }, 2000);
       console.log('user exists, skipped over if statement');
     }, uiShown: function() {
