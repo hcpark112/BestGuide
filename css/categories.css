@@ -1,0 +1,9 @@
+.custom-card,
+.custom-card:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+.card-title {
+  text-align: center;
+  padding-top: 10px;
+}
