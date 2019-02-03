@@ -27,6 +27,15 @@ $('select[name="select_dept"]').on('change',function(){
 });
 
 
+//listens for user authentication status.
+firebase.auth().onAuthStateChanged(function(user) {
+if (user) {
+      console.log(user.uid);
+//loopForUserAgendas(currentUserRef);
+} else {
+      window.location.href = "./index.html";
+}
+});
 
 // Get a reference to the database service
 var database = firebase.database();
