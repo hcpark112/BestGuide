@@ -16,6 +16,7 @@ if (category != "") {
   postingsRef.child(category).once("value", function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
 
+
       if(count % 4 == 0 && count!=0){
         row++;
         count = 0;
