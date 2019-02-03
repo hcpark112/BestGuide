@@ -33,7 +33,7 @@ var submit = $('#postButton');
 
 submit.on('click', function(){
   console.log($('#inputFName').val());
-  firebase.database().ref('postings/').set({
+  firebase.database().ref('postings/').update({
     first_name: $('#inputFName').val(),
     last_name: $('#inputLName').val(),
     department: $('#AF').val()
