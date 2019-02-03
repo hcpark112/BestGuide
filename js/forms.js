@@ -61,7 +61,7 @@ submit.on('click', function(){
      case 'Geek Squad':
      console.log(dept+"test");
 
-     firebase.database().ref('postings/Geek_squad').push({
+     firebase.database().ref('postings/Geek_Squad').push({
      FName: $('#inputFName').val(),
      Lname: $('#inputLName').val(),
      Email: $('#inputEmail').val(),
