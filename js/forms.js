@@ -41,7 +41,7 @@ submit.on('click', function(){
 
    switch (dept) {
      case 'Accounting/Finance':
-      firebase.database().ref('postings/AF').push({
+      firebase.database().ref('postings/Accounting_Finance').push({
       FName: $('#inputFName').val(),
       Lname: $('#inputLName').val(),
       Email: $('#inputEmail').val(),
@@ -52,7 +52,7 @@ submit.on('click', function(){
      case 'Geek Squad':
      console.log(dept+"test");
 
-     firebase.database().ref('postings/GS').push({
+     firebase.database().ref('postings/Geek_squad').push({
      FName: $('#inputFName').val(),
      Lname: $('#inputLName').val(),
      Email: $('#inputEmail').val(),
@@ -61,7 +61,7 @@ submit.on('click', function(){
    });
       break;
      case 'Marketing':
-     firebase.database().ref('postings/M').push({
+     firebase.database().ref('postings/Marketing').push({
      FName: $('#inputFName').val(),
      Lname: $('#inputLName').val(),
      Email: $('#inputEmail').val(),
