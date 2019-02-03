@@ -9,3 +9,13 @@ var config = {
   messagingSenderId: "317780907451"
 };
 firebase.initializeApp(config);
+
+function signOut () {
+  firebase.auth().signOut().then(function() {
+      window.location.href = './index.html';
+    }, function(error) {
+      console.error('Sign Out Error', error);
+    });
+}
+
+$('#logout').onclick = signOut;
