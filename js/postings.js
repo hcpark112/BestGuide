@@ -4,22 +4,6 @@ var postingsRef = firebase.database().ref('postings');
 
 var url = document.location.href;
 var category = url.split('#')[1];
-<<<<<<< HEAD
-// var dept;
-// switch(category) {
-//   case 'GS':
-//     dept = "Geek Square";
-//     break;
-//   case 'AF':
-//     dept = "Accounting/Finance";
-//     break;
-//   case 'Marketing':
-//     dept = category;
-//     break;
-//   default:
-//     break;
-// }
-=======
 var dept;
 switch(category) {
   case 'GS':
@@ -34,20 +18,14 @@ switch(category) {
   default:
     break;
 }
->>>>>>> d95e825dbb5513d0900c709597f68731f8a508bd
 
 var count = 0;
 var row = 0;
 var length = 0;
 
 if (category != "") {
-<<<<<<< HEAD
-  
-  $('#dept').text(category.replace("_", " "));
-=======
 
   $('#dept').text(dept);
->>>>>>> d95e825dbb5513d0900c709597f68731f8a508bd
 
   postingsRef.child(category).once("value", function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
