@@ -4,9 +4,6 @@ var postingsRef = firebase.database().ref('postings');
 
 var url = document.location.href;
 var category = url.split('#')[1];
-<<<<<<< HEAD
-
-=======
 var dept;
 switch(category) {
   case 'GS':
@@ -21,23 +18,18 @@ switch(category) {
   default:
     break;
 }
->>>>>>> da8cbf76e39476cec546f2466b8242256a0cd5c0
 
 var count = 0;
 var row = 0;
 var length = 0;
 
 if (category != "") {
-<<<<<<< HEAD
-  
-  $('#dept').text(category.replace("_", " "));
-=======
 
   $('#dept').text(dept);
->>>>>>> da8cbf76e39476cec546f2466b8242256a0cd5c0
 
   postingsRef.child(category).once("value", function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
+
 
       if(count % 4 == 0 && count!=0){
         row++;
