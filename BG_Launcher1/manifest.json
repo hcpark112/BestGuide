@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "BestGuide",
+  "description": "Helping people help others",
+  "version": "1.0.0",
+  "icons": {"128": "logo_128.png"},
+  "browser_action": {
+    "default_icon": "logo.png",
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": ["../index.html"],
+  "content_security_policy":"script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'",
+  "permissions": ["activeTab", "tabs", "notifications", "storage", "identity"]
+}
