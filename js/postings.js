@@ -1,9 +1,10 @@
 $(document).ready(function() {
-  
+
 var postingsRef = firebase.database().ref('postings');
 
 var url = document.location.href;
 var category = url.split('#')[1];
+<<<<<<< HEAD
 // var dept;
 // switch(category) {
 //   case 'GS':
@@ -18,19 +19,40 @@ var category = url.split('#')[1];
 //   default:
 //     break;
 // }
+=======
+var dept;
+switch(category) {
+  case 'GS':
+    dept = "Geek Squad";
+    break;
+  case 'AF':
+    dept = "Accounting/Finance";
+    break;
+  case 'Marketing':
+    dept = category;
+    break;
+  default:
+    break;
+}
+>>>>>>> d95e825dbb5513d0900c709597f68731f8a508bd
 
 var count = 0;
 var row = 0;
 var length = 0;
 
 if (category != "") {
+<<<<<<< HEAD
   
   $('#dept').text(category.replace("_", " "));
+=======
+
+  $('#dept').text(dept);
+>>>>>>> d95e825dbb5513d0900c709597f68731f8a508bd
 
   postingsRef.child(category).once("value", function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
-  
-  
+
+
       if(count % 4 == 0 && count!=0){
         row++;
         count = 0;
@@ -44,13 +66,13 @@ if (category != "") {
         let h5 = $("<h5 class='card-title'></h5>");
         let p = $("<p class='card-text'></p>");
         let a = $("<a class='btn btn-primary'></a>");
-  
+
         $(h5).html(arr[1] + " " + arr[2]);
         $(p).html("Phone: " + arr[3] + "</br>Skill: " + arr[4]);
         $(a).html("Contact");
-  
+
         $(a).attr("href", "mailto:"+arr[0]);
-  
+
         $("#tester"+row).append(card);
         $(card).append(cardBody);
         $(cardBody).append(h5);
@@ -59,7 +81,7 @@ if (category != "") {
         console.log('row '+row);
         console.log('count '+count);
         count++;
-  
+
       }
       else{
         let arr = [];
@@ -72,13 +94,13 @@ if (category != "") {
         let h5 = $("<h5 class='card-title'></h5>");
         let p = $("<p class='card-text'></p>");
         let a = $("<a class='btn btn-primary'></a>");
-  
+
         $(h5).html(arr[1] + " " + arr[2]);
         $(p).html("Phone: " + arr[3] + "</br>Skill: " + arr[4]);
         $(a).html("Contact");
-  
+
         $(a).attr("href", "mailto:"+arr[0]);
-  
+
         $("#tester"+row).append(card);
         $(card).append(cardBody);
         $(cardBody).append(h5);
